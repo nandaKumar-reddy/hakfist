@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_register_success">
+        <!-- <observer name="Hakfist_customerregistration_observer" instance="Hakfist\CustomerRegistration\Observer\CustomerRegisterSuccess"/> -->
+          <observer name="customer_file_upload" instance="Hakfist\CustomerRegistration\Observer\CustomerFileUpload" />
+    </event>
+</config>

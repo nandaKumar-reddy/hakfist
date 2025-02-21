@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>	
+	    <add id="Hakfist_ProductMasterApi::productmasterapi" title="Products Master API" module="Hakfist_ProductMasterApi" sortOrder="20" resource="Hakfist_ProductMasterApi::productmasterapi" parent="Hakfist_All::main_menu" dependsOnModule="Hakfist_All"/>	
+        <add id="Hakfist_ProductMasterApi::apiconfiguration" resource="Hakfist_ProductMasterApi::productmasterapi" title="Odoo Configurations  " action="adminhtml/system_config/edit/section/apiconfig" module="Hakfist_ProductMasterApi" sortOrder="25" parent="Hakfist_ProductMasterApi::productmasterapi" dependsOnModule="Hakfist_ProductMasterApi"/>	
+		<add id="Hakfist_ProductMasterApi" resource="Hakfist_ProductMasterApi::productmasterapi" title="Odoo Products" action="productsync/index/index" module="Hakfist_ProductMasterApi" sortOrder="25" parent="Hakfist_ProductMasterApi::productmasterapi" dependsOnModule="Hakfist_ProductMasterApi"/>
+		<add id="Hakfist_ProductMasterApi::ProductSync_Log"  title="ProductSync Log"  module="Hakfist_ProductMasterApi" sortOrder="25" parent="Hakfist_ProductMasterApi::productmasterapi" resource="Hakfist_ProductMasterApi::productmasterapi" action="productsync/post/index"  dependsOnModule="Hakfist_ProductMasterApi"/>
+    </menu>
+</config>

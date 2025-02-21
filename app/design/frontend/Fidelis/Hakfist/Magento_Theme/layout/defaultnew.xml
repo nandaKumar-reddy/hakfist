@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <referenceBlock name="header">
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+    </referenceBlock> 
+    <referenceBlock name="top.links">
+         <block class="Hakfist\CustomerRegistration\Block\TopLink" name="custom-link" after="top-link2"/>
+        <!-- <block class="Magento\Framework\View\Element\Html\Link" name="top-link3">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                <argument name="path" xsi:type="string">customer/account</argument>
+                <argument name="sortOrder" xsi:type="number">200</argument>
+                 <argument name="class" xsi:type="string">myaccount</argument>
+            </arguments>
+        </block> -->
+        <block class="Magento\Framework\View\Element\Html\Link" name="top-link2">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Track your order</argument>
+                <argument name="path" xsi:type="string">*/*/*</argument>
+                <argument name="sortOrder" xsi:type="number">100</argument>
+                <argument name="class" xsi:type="string">track_order</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link" name="top-link1">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Locate us</argument>
+                <argument name="path" xsi:type="string">*/*/*</argument>
+                <argument name="sortOrder" xsi:type="number">300</argument>
+                <argument name="class" xsi:type="string">Locateus</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link" name="top-link4">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Personalised gift to grow</argument>
+                <argument name="path" xsi:type="string">customer/account</argument>
+                <argument name="sortOrder" xsi:type="number">100</argument>
+                <argument name="class" xsi:type="string">myaccount</argument>
+            </arguments>
+        </block>
+    	</referenceBlock>  
+        <!-- <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-orders-link-top" after="top-link4" >
+                <arguments>
+                    <argument name="path" xsi:type="string">sales/order/history</argument>
+                    <argument name="label" xsi:type="string" translate="true">My Orders</argument>
+                </arguments>
+            </block>
+        </referenceBlock>   -->
+        <referenceContainer name="footer-container">
+                <block class="Magento\Theme\Block\Html\Footer" name="footer" as="footer" template="html/footer.phtml"/>
+        </referenceContainer>    
+        <move element="navigation.sections" destination="header-wrapper" />
+        <referenceBlock name="skip_to_content" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="authorization-link" remove="true" />    
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true" />
+        <!-- <referenceBlock name="wish-list-link" remove="true"/> -->
+        <!-- <move element="wish-list-link" destination="header-wrapper" after="top.search"/> -->
+        <move element="wish-list-link" destination="header-wrapper" after="top.search"/>
+        
+    </body>
+</page>

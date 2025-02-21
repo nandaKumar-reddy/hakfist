@@ -1,0 +1,110 @@
+
+
+<?php 
+
+$_product = $block->getProduct();
+// $custom = $_product->getColor();
+$custom = $_product->getData('color');
+// echo $_product->getData('color');
+// echo $_product->getSku();
+// echo $_product->getName();
+// echo $custom;
+// echo  $_product->getResource()->getAttribute('color')->getFrontend()->getValue($_product);
+// echo $_product->getResource()->getAttribute('color')->getFrontend()->getValue($_product); 
+
+
+$product = $block->getProduct();
+$product->getResource()->load($product, $product->getId(),['color']);
+
+//then you can get attribute data
+$value = $product->getColor(); //52
+$label = $product->getResource()->getAttribute('color')->getFrontend()->getLabel(); // Color
+$text = $product->getResource()->getAttribute('color')->getFrontend()->getValue($product);  //Orange
+$colorAttributeId = $product->getResource()->getAttribute('color')->getId(); // Get Color Attribute Id
+//$configurableAttrs = $product->getTypeInstance()->getConfigurableAttributesAsArray($product); // Get Used Attributes with its values
+
+//if(isset($configurableAttrs[$colorAttributeId])){
+        // echo count($configurableAttrs[$colorAttributeId]['values']); // Gives you the count
+        // echo "<pre>";print_r($configurableAttrs[$colorAttributeId]['values']); // Give you values used
+//}
+// echo $value;
+// echo $label;
+// echo $text;
+?>
+<div class="product-customization">
+    <div class="customized-add-to-cart">
+        <div class="customized-add-to-cart-container">
+            <div class="container-2">
+                <div class="order-bottons-frame">
+                    <span class="available-in-stock">In Stock</span>
+                </div>
+                <div class="order-bottons-frame-right">
+                    <span id="open-modal-btn" class="view-stock"><a href="#">View Stock</a></span>
+                </div>
+            </div>
+            <div class="price-frame-324">
+                <span class="price-on-request">
+                Price on request
+                </span>
+            </div>
+            <div class="frame-3202">
+                <span class="grab-you-15-off-on-sale-products">
+                Grab you 15% off on sale products!
+                </span>
+            </div>
+            <div class="frame-325">
+                <span class="connect-to-us"><a href="#">Connect to us?</a></span>
+            </div>
+            <div class="personalise-order-container">
+                <span class="hak-service-button customorder"><a class="pdp-button-text" href="#" tabindex="0"><span class="pdp-buttons button">personalise</span><span>Configure product and personalise</span></a>                             
+                </span>
+                <span class="hak-service-button customorder"><a class="pdp-button-text" href="#" tabindex="0"><span class="pdp-buttons button">Add to cart unprinted</span><span>Quality check first before print</span></a>                             
+                </span>
+            </div>
+        </div>
+      </div>
+    <div class="customized-rate-calculator">
+        <div  class="rate-calculator-content">
+            <p class="rate-calculator-main">Rate calculator</p>
+            <p class="rate-calculator-border">Get best rates with customization</p>
+            <span class="hak-service-button customorder"><a class="pdp-button-text" href="#" tabindex="0"><span class="pdp-buttons button">caclulate a quote</span><span>Enhancing pricing experience with us</span></a>                             
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="stock-info-modal" class="modal active">
+    <div class="modal-content">
+        <div class="stock-popup-header">
+            <p><?php echo __('Stock Information'); ?></p>
+            <button class="stock-popup-close" onclick="closePopup()">×</button>
+        </div>
+    <table class="stock-info-table">
+        <thead>
+            <tr>
+                <th><?php echo __('Sl. No.'); ?></th>
+                <th><?php echo __('Next Arrivals Date'); ?></th>
+                <th><?php echo __('Quantity Next Arrival'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20-08-2024</td>
+                <td>200</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById('stock-info-modal').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('stock-info-modal').style.display = 'none';
+    }
+
+    document.getElementById('open-modal-btn').onclick = openPopup;
+</script>

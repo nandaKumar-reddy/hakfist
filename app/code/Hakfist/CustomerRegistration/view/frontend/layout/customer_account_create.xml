@@ -1,0 +1,27 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Hakfist_CustomerRegistration::css/b2bregistration.css" />
+    </head>
+    <body>
+    <!-- and for the page title: -->
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+               <argument translate="true" name="title" xsi:type="string">Create an Account</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="customer_form_register">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Hakfist_CustomerRegistration::form/register.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="customer_form_register">
+            <arguments>
+                <argument name="show_address_fields" xsi:type="boolean">true</argument>
+            </arguments>
+        </referenceBlock>
+        <!-- <referenceContainer name="form.additional.info">
+            <block class="Magento\Framework\View\Element\Template" name="register" template="Hakfist_CustomerRegistration::form/register.phtml"/>
+           <block class="Hakfist\CustomerRegistration\Block\Form\Register" name="register" template="Hakfist_CustomerRegistration::form/register.phtml" />
+        </referenceContainer> -->
+    </body>
+</page>

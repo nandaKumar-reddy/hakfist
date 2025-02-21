@@ -1,0 +1,182 @@
+<div id="message-container"></div>
+<div id="custom-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <h3 id="popup-title"></h3>
+        <p id="popup-message"></p>
+    </div>
+</div>
+<div id="otp-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <h3>E-mail address validation</h3>
+        <p>Please enter the six-digit security code sent to <a href="mailto:email@example.com" id="otp-email"></a></p>
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" class="otp" name="otp[]">
+            <input type="text" maxlength="1" class="otp" name="otp[]">
+            <input type="text" maxlength="1" class="otp" name="otp[]">
+            <input type="text" maxlength="1" class="otp" name="otp[]">
+            <input type="text" maxlength="1" class="otp" name="otp[]">
+            <input type="text" maxlength="1" class="otp" name="otp[]">
+        </div>
+        <div class="actions">
+            <span id="resend-timer">Resend in 30 sec</span>
+            <button id="resend-button" class="hidden">Resend</button>
+            <button id="validate-button">Validate</button>
+        </div>
+    </div>
+</div>
+
+<div id="loading-spinner" class="loading-spinner">
+    <div class="spinner"></div>
+</div>
+
+<form id="registration-form" method="POST" action="#" id="form-validate" enctype="multipart/form-data" autocomplete="off">
+    <?= /* @noEscape */ $block->getBlockHtml('formkey') ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <div class="b2b_registration">
+        <div class="business-account">
+            <h3>Create an Business Account</h3>
+        </div>
+        <div class="company-contact">
+            <h3>Company & Contact Information</h3>
+        </div>
+        <!-- Account Information -->
+        <div class="customer_registration">
+            <div class="company-registration">
+                <div class="customer-company">
+                    <div class="customer-details-col1">
+                        <label for="business_name">Business Name</label>
+                        <input type="text" id="business_name" name="business_name"><br>
+                    </div>
+                    <div class="customer-details-col1">
+                        <label for="address_line">Address Line 1</label>
+                        <input type="text" id="address_line" name="address_line"><br>
+                    </div>
+                    <div class="customer-details-col1">
+                        <label for="company_email">Company Email</label>
+                        <div class="input-wrapper">
+                            <span class="emoji">📧</span>
+                            <input type="email" id="company_email" name="company_email">
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="trn-details">
+                    <div class="customer-details">
+                        <label for="trn_number">TRN Number</label>
+                        <input type="text" id="trn_number" name="trn_number"><br>
+                    </div>
+                    <div class="customer-details">
+                        <label for="address_line2">Address Line 2</label>
+                        <input type="text" id="address_line2" name="address_line2"><br>
+                    </div>
+                    <div class="customer-details">
+                        <label for="company_number">Company Contact Number</label>
+                        <input type="number" id="company_number" name="company_number"><br>
+                    </div>
+                </div>
+                <div class="taxation-details">
+                    <div class="customer-details-col3">
+                        <label for="tax_certificate">Upload Certificate(TAX)</label>
+                        <input type="file" id="tax_certificate" name="tax_certificate"><br>
+                    </div>
+                    <div class="customer-details-col3">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city"><br>
+                    </div>
+                    <div class="customer-details-col3">
+                        <label for="company_website">Company Website</label>
+                        <input type="text" id="company_website" name="company_website"><br>
+                    </div>
+                </div>
+                <div class="website-details">
+                    <div class="customer-details-col4">
+                        <label for="reg_number">Registration Number</label>
+                        <input type="text" id="reg_number" name="reg_number"><br>
+                    </div>
+                    <div class="customer-details-col4">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Please select</option>
+                            <?php foreach ($block->getCountryOptions() as $country) : ?>
+                                <option value="<?php echo $country['value']; ?>"><?php echo $country['label']; ?></option>
+                            <?php endforeach; ?>
+                        </select><br>
+                    </div>
+                    <div class="customer-details-col4">
+                        <label for="phone_number">Company Alternative Phone Number</label>
+                        <input type="number" id="phone_number" name="phone_number"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="poc-title">
+                <h3>POC's Details</h3>
+            </div>
+            <div class="poc-details">
+                <div class="poc-details-row1">
+                    <label for="poc_number">Point Of Contact Name</label>
+                    <input type="text" id="poc_number" name="poc_number"><br>
+                </div>
+                <div class="poc-details-row1">
+                    <label for="poc_designation">POC Designation</label>
+                    <input type="text" id="poc_designation" name="poc_designation"><br>
+                </div>
+                <div class="poc-details-row1">
+                    <label for="poc_email">POC Email</label>
+                    <div class="input-wrapper">
+                        <span class="emoji">📧</span>
+                        <input type="email" id="poc_email" name="poc_email">
+                    </div>
+                </div>
+                <div class="poc-details-row2">
+                    <label for="category">Interested Category Products</label>
+                    <select id="category" name="category">
+                        <option value="">Please select</option>
+                        <?php foreach ($block->getCategoryOptions() as $option) : ?>
+                            <option value="<?php echo $option['value']; ?>"><?php echo $option['label']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="business_turnover">
+                <label for="business_turnover">Approximate Business Turnover Per Year (AED)</label>
+                <input type="text" id="business_turnover" name="business_turnover">
+            </div>
+            <div class="poc-title">
+                <h3>Team Member</h3>
+            </div>
+            <div class="team-details" id="team-details">
+                <div class="team-details-row1">
+                    <label for="team_name">Name</label>
+                    <input type="text" id="team_name" name="team_name[]"><br>
+                </div>
+                <div class="team-details-row2">
+                    <label for="team_number">Mobile Number</label>
+                    <input type="tel" id="team_number" name="team_number[]"><br>
+                </div>
+                <div class="team-details-row1">
+                    <label for="team_email">Email</label>
+                    <div class="input-wrapper">
+                        <span class="emoji">📧</span>
+                        <input type="email" id="team_email" name="team_email[]">
+                    </div>
+                </div>
+                <div class="team-details-row1">
+                    <label for="team_designation">Designation</label>
+                    <input type="text" id="team_designation" name="team_designation[]">
+                </div>
+            </div>
+            <div id="additional-team-members"></div>
+            <div class="create-customer">
+                <div class="create-account-btn">
+                    <button type="submit" id="submit-btn">Create Account</button>
+                </div>
+                <div class="add-team-btn">
+                    <button type="button" id="add-team-button">Add Sales Person</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

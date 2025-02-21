@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+    <tab id="odooapi" translate="label" sortOrder="100">
+            <label>Odoo Configuration</label>
+    </tab>
+        <section id="apiconfig" translate="label" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>API Setting</label>
+            <tab>odooapi</tab>
+            <resource>Hakfist_ProductMasterApi::api_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>API Configuration</label>
+                <field id="token_end_point" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Token End Point</label>
+                </field>
+                <field id="productapi_information" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>ProductMaster End Point</label>
+                </field>
+                <field id="account_information" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Odoo Customer Create API</label>
+                </field>
+                <field id="update_customer_api" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Odoo Customers API</label>
+                </field>
+                <field id="SyncTime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products Last Sync Time</label>
+                    <comment>This is products fetched time from Odoo</comment>
+                    <frontend_model>Hakfist\ProductMasterApi\Block\Adminhtml\System\Config\Form\Field\Read</frontend_model>
+                </field>
+                <field id="Syncbutton" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sync All Products from Odoo</label>
+                    <frontend_model>Hakfist\ProductMasterApi\Block\Adminhtml\System\Config\Form\Button</frontend_model>
+                </field>
+                <field id="ImportTime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products Last Import Time</label>
+                    <comment>Products Updated into Magento</comment>
+                    <frontend_model>Hakfist\ProductMasterApi\Block\Adminhtml\System\Config\Form\Field\Read</frontend_model>
+                </field>
+                <field id="importbutton" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import Products into Magento</label>
+                    <frontend_model>Hakfist\ProductMasterApi\Block\Adminhtml\System\Config\Form\Import</frontend_model>
+                </field>
+                <field id="generated_report" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1"> 
+                    <label> Product Master Report </label> 
+                    <comment>It can be used to display additional information about products sync.</comment> 
+                </field> 
+            </group>
+        </section>
+    </system>
+</config>

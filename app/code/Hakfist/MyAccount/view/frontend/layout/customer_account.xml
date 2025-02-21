@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+    <head>
+        <css src="Hakfist_MyAccount::css/myaccount.css" />
+    </head> 
+    <body>
+        <!-- Wish list link -->
+        <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
+        <!-- Address link -->
+        <referenceBlock name="customer-account-navigation-address-link" remove="true"/>
+        <!-- Product review link -->
+        <referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
+        <!-- Subscription link -->
+        <referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
+        <!-- My credit card link -->
+        <referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+         <!-- Account edit link -->
+        <referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/>
+        <!-- Downloadable product link -->
+        <referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+        <!-- delimiter-1 link -->
+        <referenceBlock name="customer-account-navigation-delimiter-1" remove="true"/>
+        <!-- delimiter-2 link -->
+        <referenceBlock name="customer-account-navigation-delimiter-2" remove="true"/>
+
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_myquotes">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/quotes</argument>
+                    <argument name="label" xsi:type="string">My Quotes</argument>
+                    <argument name="sortOrder" xsi:type="number">150</argument>
+                    <argument name="navigation" xsi:type="boolean">true</argument>
+                </arguments>
+            </block>
+             <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_savedconcept">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/savedconcept</argument>
+                    <argument name="label" xsi:type="string">Saved Concept</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_myupload">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/myupload</argument>
+                    <argument name="label" xsi:type="string">My Uploads / Logo</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_profilesetting">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/profilesetting</argument>
+                    <argument name="label" xsi:type="string">Profile Setting</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_savedaddress">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/address</argument>
+                    <argument name="label" xsi:type="string">Saved Address</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_drafts">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/drafts</argument>
+                    <argument name="label" xsi:type="string">My Drafts</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_paymentsetting">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/paymentsetting</argument>
+                    <argument name="label" xsi:type="string">Payment Setting</argument>
+                </arguments>
+            </block>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_customerapi">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/customerapi</argument>
+                    <argument name="label" xsi:type="string">Customer API</argument>
+                </arguments>
+            </block>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="Hakfist_myaccount_newsletteremail">
+                <arguments>
+                    <argument name="path" xsi:type="string">hakfist/account/newsletteremail</argument>
+                    <argument name="label" xsi:type="string">Newsletter Email</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
+
+

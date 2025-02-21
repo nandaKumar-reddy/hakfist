@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <head>
+        <css src="Hakfist_CreateCustomer::css/b2bregistration.css" />
+    </head> 
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.createcustomer.login" template="Hakfist_CreateCustomer::form/login.phtml" />
+        </referenceContainer>
+    </body>
+</page>

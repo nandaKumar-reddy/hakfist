@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">homebanners_index_form.homebanners_form_data_source</item>
+            <item name="deps" xsi:type="string">homebanners_index_form.homebanners_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">homebanners_index_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Hakfist\HomeBanners\Block\Adminhtml\HomeBanners\BackButton</item>
+            <item name="delete" xsi:type="string">Hakfist\HomeBanners\Block\Adminhtml\HomeBanners\DeleteButton</item>
+            <item name="reset" xsi:type="string">Hakfist\HomeBanners\Block\Adminhtml\HomeBanners\ResetButton</item> 
+            <item name="save" xsi:type="string">Hakfist\HomeBanners\Block\Adminhtml\HomeBanners\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">Hakfist\HomeBanners\Block\Adminhtml\HomeBanners\SaveAndContinueButton</item> 
+        </item>
+    </argument>
+    <dataSource name="homebanners_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Hakfist\HomeBanners\Model\HomeBanners\DataProvider</argument>
+            <argument name="name" xsi:type="string">homebanners_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">homebanners_id</argument>
+            <argument name="requestFieldName" xsi:type="string">homebanners_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="homebanners/index/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string"/>
+            </item>
+        </argument>
+        <field name="homebanners_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="dataScope" xsi:type="string">homebanners_id</item>
+                </item>
+            </argument>
+        </field>
+         <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="label" xsi:type="string" translate="true">Enable</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">9</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+        </field> 
+         <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="homebannerslink">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Link</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">12</item>
+                    <item name="dataScope" xsi:type="string">homebannerslink</item>
+                     
+                </item>
+            </argument>
+        </field>
+        <field name="homebannerssort">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Sort Order</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">13</item>
+                    <item name="dataScope" xsi:type="string">homebannerssort</item>
+                     <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="homebannerssceneimg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Scene7 Image Path</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">14</item>
+                    <item name="dataScope" xsi:type="string">homebannerssceneimg</item>
+                        
+                </item>
+            </argument>
+        </field>
+        <field name="mobilebannertitle">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Mobile Banner Title</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">15</item>
+                    <item name="dataScope" xsi:type="string">mobilebannertitle</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="mobilehomebannerslink">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Mobile Homebanner Link</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">16</item>
+                    <item name="dataScope" xsi:type="string">mobilehomebannerslink</item>
+                     
+                </item>
+            </argument>
+        </field>
+        <field name="homebannersmobileimg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Mobile Scene7 Image Path</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">17</item>
+                    <item name="dataScope" xsi:type="string">homebannersmobileimg</item>
+                        
+                </item>
+            </argument>
+        </field>
+        
+        <field name="homebannersimage">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="label" xsi:type="string" translate="true">Banner Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">false</item>
+                        </item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item> 
+                <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item> 
+                <item name="dataScope" xsi:type="string">homebannersimage</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">18</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="homebanners/homebanners_image/upload"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+         <field name="content">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Description</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">19</item>
+                    <item name="dataScope" xsi:type="string">content</item>
+                     
+                </item>
+            </argument>
+        </field>  
+
+        <!-- <field name="bannerpage">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Banner Page</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">8</item>
+                    <item name="dataScope" xsi:type="string">bannerpage</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_text_blocks_usable">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="label" xsi:type="string" translate="true">Is above Text Layers usable on UI</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="source" xsi:type="string">bannerblocks</item>
+                    <item name="sortOrder" xsi:type="number">11</item>
+                    <item name="dataScope" xsi:type="string">is_text_blocks_usable</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+        </field>
+        <field name="stylename">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Style Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">13</item>
+                    <item name="dataScope" xsi:type="string">stylename</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>     
+                </item>
+            </argument>
+        </field>
+        <field name="colorwayname">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Colorway Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">14</item>
+                    <item name="dataScope" xsi:type="string">colorwayname</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>     
+                </item>
+            </argument>
+        </field>
+        <field name="roomdesigner">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="readonly" xsi:type="boolean">true</item> 
+                    <item name="label" xsi:type="string" translate="true">Room Bannerer Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">homebanners</item>
+                    <item name="sortOrder" xsi:type="number">15</item>
+                    <item name="dataScope" xsi:type="string">roomdesigner</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>     
+                </item>
+            </argument>
+        </field>
+        <field name="select_template">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Hakfist\HomeBanners\Model\Source\Mysource</item>
+                <item name="config" xsi:type="array">
+                    <item name="formElement" xsi:type="string">hidden</item>
+                    <item name="label" xsi:type="string" translate="true">Slider Template</item>
+                     <item name="options" xsi:type="array">
+                        <item name="33" xsi:type="string">33</item>
+                        <item name="50" xsi:type="string">50</item>
+                    </item> 
+                    <item name="default" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </field>  
+        <field name="homebannersbanner">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataType" xsi:type="string">string</item>
+                <item name="source" xsi:type="string">homebanners</item>
+                <item name="label" xsi:type="string" translate="true">Banner Banner</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                <item name="formElement" xsi:type="string">fileUploader</item>
+                <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item> 
+               <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item> 
+               <item name="dataScope" xsi:type="string">homebannersbanner</item>
+                <item name="required" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="number">18</item>
+                <item name="uploaderConfig" xsi:type="array">
+                    <item name="url" xsi:type="url" path="homebanners/homebanners_banner/upload"/>
+                </item>
+            </item>
+        </argument>
+    </field>
+
+    <field name="homebannershoverimage">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="dataType" xsi:type="string">string</item>
+                <item name="source" xsi:type="string">homebanners</item>
+                <item name="label" xsi:type="string" translate="true">Banner Hover Image</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                <item name="formElement" xsi:type="string">fileUploader</item>
+                <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item> 
+               <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item> 
+               <item name="dataScope" xsi:type="string">homebannershoverimage</item>
+                <item name="required" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="number">19</item>
+                <item name="uploaderConfig" xsi:type="array">
+                    <item name="url" xsi:type="url" path="homebanners/homebanners_hoverimage/upload"/>
+                </item>
+            </item>
+        </argument>
+    </field> -->
+        
+    </fieldset>
+</form>

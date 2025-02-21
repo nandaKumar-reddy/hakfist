@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+
+$_product = $block->getProduct();
+$custom = $_product->getSku();
+// $custom = "HK0001";
+?>
+<?= $custom ?>
+<div class="subname-name"> <?php 
+            $optionText = '';
+            $attr = $_product->getResource()->getAttribute('sku');
+
+            if ($attr->usesSource()) {
+               $optionText = $attr->getSource()->getOptionText($_product->getSubname());
+            }
+            ?>
+            <?php if($optionText){ ?>
+                 <?php echo "" . $optionText . "<br>"; ?>
+            <?php } ?>
+         <div><p>Lunch BackPack</p></div>
+         </div>

@@ -1,0 +1,152 @@
+<div class="login-container">
+	<div class="left">
+		<img src="<?= $block->getViewFileUrl('images/background_login.png'); ?>" alt="hakfist logo " />
+	</div>
+	<div class="right">
+		<img src="<?= $block->getViewFileUrl('images/login_haklogo.png'); ?>" alt="hakfist logo " />
+		<h2>Hello! Welcome back</h2>
+		<form id="popup-login-form" method="POST" action="#" enctype="multipart/form-data" autocomplete="off">
+			<div class="error-message" id="error-message"></div>
+			<div class="form-group">
+				<label for="email">Username</label>
+				<div class="input-icon">
+					<img src="<?= $block->getViewFileUrl('images/email_logo.png'); ?>" alt="email logo">
+					<input type="text" name="email" id="email" placeholder="johndeo@website.com" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<div class="input-icon">
+					<img src="<?= $block->getViewFileUrl('images/password_logo.png'); ?>" alt="password logo">
+					<input type="password" name="password" id="password" placeholder="*********" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="checkbox"  name="remember_me" value="1" id="remember_me">
+				<label for="remember_me">Remember me</label>
+				<a href="#">Reset Password</a>
+			</div>
+			<div class="form-group">
+				<button type="submit" id="submit-btn">Sign In</button>
+			</div>
+		</form>
+		<div class="social-login">
+			<a href="#"><i class="fab fa-google"></i></a>
+			<a href="#"><i class="fab fa-apple"></i></a>
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+		</div>
+		<div class="register">
+			<p>Don't have an account? <a href="create">Create Account</a></p>
+		</div>
+	</div>
+</div>
+
+<!-- <script type="text/javascript">
+		require(['jquery'], function($) {
+
+
+			var loginUrl = "<?php echo $block->getUrl('hakfist/index/loginform') ?>";
+
+
+		
+			
+			$('.popup-login-form').submit(function() {
+					var formData = getFormData($(this));
+					$.ajax({
+						type: "POST",
+						url: loginUrl,
+						data: formData,
+						dataType: "json",
+						success: function(data) {
+							var uri = window.location.toString(); 
+ 							 if (uri.indexOf("#") > 0) { 
+	 						 var clean_uri = uri.substring(0,uri.indexOf("#")); 
+							window.history.replaceState({},  
+							document.title, clean_uri); 
+  							}  
+							if (data.errors) {
+								showResponse(data);
+								loginButton.text(loginText);
+								loginButton.removeAttr('disabled');
+							} else {
+								location.reload();
+							}
+						},
+						error: function(error) {
+							loginButton.text(loginText);
+							loginButton.removeAttr('disabled');
+							console.log('Login error: ', eval(error));
+						}
+
+
+					});
+				
+				return false;
+			});
+
+		
+
+			function getFormData(formElem) {
+				var unindexed_array = formElem.serializeArray();
+				var indexed_array = {};
+
+				jQuery.map(unindexed_array, function(n, i) {
+					indexed_array[n['name']] = n['value'];
+				});
+
+				return indexed_array;
+			}
+
+
+			function showResponse(data) {
+				if (data.errors) {
+					$('.response-msg').html("<div class='error'>" + data.message + "</div>");
+				} else {
+					$('.response-msg').html("<div class='success'>" + data.message + "</div>");
+				}
+				setTimeout(function() {
+					$('.response-msg').html(null);
+				}, 5000);
+			}
+		});
+	</script> -->
+<script>
+	require([
+		'jquery'
+	], function($, kp) {
+		$("#popup-login-form").submit(function(event) {
+			event.preventDefault();
+			var formData = new FormData(this);
+			console.log("Form Data:", formData);
+
+			$.ajax({
+				type: "POST",
+				url: '/hakfist/index/loginform',
+				data: formData,
+				dataType: "JSON",
+				processData: false, // Important!
+				contentType: false, // Important!
+				success: function(data) {
+					if (data.success) {
+						console.log("Form data received:", data);
+						console.log("Form submitted successfully!");
+						console.log('Success', 'Customer logged in successfully!', true);
+						// Clear form fields
+						$("#popup-login-form")[0].reset();
+						$("#error-message").hide();
+						window.location.href = '/';
+					} else {
+						console.log("Error:", data.message);
+						console.log("Form submission failed!");
+						$("#error-message").text(data.message).show();
+					}
+				},
+				error: function(xhr, status, error) {
+					console.error("AJAX error:", status, error);
+					console.log("An error occurred while submitting the form.");
+					$("#error-message").text("An error occurred while submitting the form. Please try again.").show();
+				}
+			});
+		});
+	});
+</script>

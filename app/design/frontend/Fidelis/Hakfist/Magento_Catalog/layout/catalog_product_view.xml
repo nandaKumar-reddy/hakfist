@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Theme::css/product.css"/>
+    </head>
+    <body>
+     <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.start" template="product/view/start.phtml" before="-" />   
+    </referenceContainer>
+    <referenceContainer name="content.top.most">
+        <container name="custom.block.salename" htmlTag="div" htmlClass="custom-product-sale" before="-">
+            <block class="Magento\Catalog\Block\Product\View" name="custom_salesname" template="Magento_Catalog::product/view/before_title.phtml" />
+        </container>
+    </referenceContainer>
+    <referenceContainer name="content.top.most">
+        <container name="custom.block.subname" htmlTag="div" htmlClass="custom-product-subname" before="-">
+            <block class="Magento\Catalog\Block\Product\View" name="custom_subname" template="Magento_Catalog::product/view/after_title.phtml" />
+        </container>
+    </referenceContainer>
+    <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View" name="custom.accordion.file" after="product.info.overview" template="Magento_Catalog::product/view/aftercolorways.phtml" />
+	</referenceContainer>
+   
+    <referenceContainer name="content">
+        <block class="Magento\Catalog\Block\Product\View" name="Product.customization" template="Magento_Catalog::product/view/customization.phtml" after="-"/>
+    </referenceContainer>
+    <!-- <referenceContainer name="product.info.main">
+        <block class="Magento\Catalog\Block\Product\View" name="product.info" template="Magento_Catalog::product/view/form.phtml" after="-"> 
+    </referenceContainer> -->
+    <move element="Product.customization" destination="main" after="content.bottom"/>
+    <move element="custom.block.subname" destination="product.info.main" after="page.main.title"/>
+    <move element="custom.block.salename" destination="product.info.main" before="page.main.title"/>
+    <move element="page.main.title" destination="product.info.main" after="product.info.start"/>
+    <move element="product.info.price" destination="product.info.addtocart.additional" />
+    <move element="product.info.overview" destination="product.info.main" after="page.main.title" />  
+
+
+    <referenceBlock name="product.info.qty" remove="true" />
+    <referenceBlock name="product.info.review" remove="true" />
+    <referenceBlock name="product.attributes" remove="true" />
+    <referenceBlock name="product.info.details" remove="true" />
+    <!-- <referenceBlock name="product.info.overview" remove="true"/> -->
+	<referenceBlock name="reviews.tab" remove="true" /> 
+    <!-- <referenceBlock name="category.product.addto.wishlist" remove="true"/> -->
+    <referenceBlock name="category.product.addto.wishlist" remove="true" />
+    <referenceBlock name="wishlist_sidebar" remove="true" />
+    <referenceBlock name="view.addto.wishlist" remove="true" />
+    <referenceBlock name="catalog.product.related" remove="true" />
+    <referenceBlock name="product.info.stock.sku" remove="true"/>
+    </body>
+</page>

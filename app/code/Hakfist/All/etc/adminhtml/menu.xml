@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Hakfist_All::main_menu" title="Hak" module="Hakfist_All" sortOrder="10" dependsOnModule="Hakfist_All"  resource="Magento_Backend::content" />		
+    </menu>
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>	
+	    <add id="Hakfist_HomeBanners::HomeBanners" title="Home Banners" module="Hakfist_HomeBanners" sortOrder="30" resource="Hakfist_HomeBanners::HomeBanners" parent="Hakfist_All::main_menu" dependsOnModule="Hakfist_All"/>
+		<add id="Hakfist_HomeBanners::homebanners" resource="Hakfist_HomeBanners::homebanners" title="Home Banners" action="homebanners/index/index" module="Hakfist_HomeBanners" sortOrder="40" parent="Hakfist_HomeBanners::HomeBanners" dependsOnModule="Hakfist_HomeBanners"/>
+    </menu>
+</config>

@@ -1,0 +1,45 @@
+.form.create.account {
+    width: 1800px !important;
+    max-width: 97% !important;
+}
+.form.create.account .fieldset {
+    width: 25%;
+    margin: 0px 20px;
+}
+.form.create.account .customer-details {
+    display: flex;
+}
+.form.create.account .field {
+    width: 100%;
+}
+.form.create.account .field.choice.newsletter {
+    display: none;
+}
+form.create.account .fieldset.create.account .legend, .fieldset.address .legend {
+    display: none;
+}
+
+.customer_billing {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.customer_shipping {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+form.create.account .field .street  {
+   margin-bottom: 10px;
+}
+
+  /* .choice  {
+    display: none;
+ } */
+
+ /* .field .same_as_shipping  {
+    margin-bottom: -29px;
+    margin-left: 160px;
+ } */

@@ -1,0 +1,38 @@
+<div id="stock-info-modal" class="modal">
+    <div class="modal-content">
+        <div class="stock-popup-header">
+            <p><?php echo __('Stock Information'); ?></p>
+            <button class="stock-popup-close" onclick="closePopup()">×</button>
+        </div>
+        <table class="stock-info-table">
+            <thead>
+                <tr>
+                    <th><?php echo __('Sl. No.'); ?></th>
+                    <th><?php echo __('Next Arrivals Date'); ?></th>
+                    <th><?php echo __('Quantity Next Arrival'); ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><?php echo $block->escapeHtml($block->getNextArrivalDate()); ?></td>
+                    <td><?php echo $block->escapeHtml($block->getStockQty()); ?></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button id="open-modal-btn"><?php echo __('Show Stock Information'); ?></button>
+
+<script>
+    function openPopup() {
+        document.getElementById('stock-info-modal').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('stock-info-modal').style.display = 'none';
+    }
+
+    document.getElementById('open-modal-btn').onclick = openPopup;
+</script>

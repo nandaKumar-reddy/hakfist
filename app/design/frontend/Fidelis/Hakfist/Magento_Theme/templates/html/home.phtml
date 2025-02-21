@@ -1,0 +1,98 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Custom Home Page 
+ *
+ */ 
+?>
+<div class="Page-main-container"> 
+    <div class="slider-cintainer">
+        <div class="main-content">
+            <div class="connect-us-icons"><span><a href="#"><img src="<?=$block->getViewFileUrl('images/LinkedinLogo.png'); ?>" alt="Linkedin" /></a></span><span><a href="#"><img src="<?=$block->getViewFileUrl('images/YoutubeLogo.png'); ?>" alt="Youtube" /></a></span><span><a href="#"><img src="<?=$block->getViewFileUrl('images/WhatsappLogo.png'); ?>" alt="Whatsapp" /></a></span><span><a href="#"><img src="<?=$block->getViewFileUrl('images/InstagramLogo.png'); ?>" alt="Instagram" /></a></span><span><a href="#"><img src="<?=$block->getViewFileUrl('images/FacebookLogo.png'); ?>" alt="Facebook" /></a></span></div>
+            <div class="connect-us">Connect to us on </div>
+        </div>
+        <div class="main-slider" id="main-slider"> 
+                    <div class="video-wrapper">
+                        <!-- <img class="imagelayer" src="<?=$block->getViewFileUrl('images/Group.png'); ?>" alt="ImageLayer" /> -->
+                        <div class="slider-content-block">
+                            <span class="content-block1 slider-text">Let's Grow Together</span>
+                            <span class="content-block2 slider-text">Product Team Supports you on your Steps</span>
+                            <span class="content-block3 slider-text">Your success is our priority</span>
+                            <span class="content-block4 slider-text">
+                                <a href="#"><span class="getintouch-button button">Get in Touch</span></a>
+                                <span><img class="slider-image" src="<?=$block->getViewFileUrl('images/PlayCircle.png'); ?>" alt="slider-play-animate" /></span>
+                            </span>
+                    </div>
+                    <video class="background" autoplay muted loop>
+                        <source src="../pub/banner1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper">
+                <!-- <img class="imagelayer" src="<?=$block->getViewFileUrl('images/Group.png'); ?>" alt="ImageLayer" /> -->
+                    <div class="slider-content-block">
+                            <span class="content-block1 slider-text">Let's Grow Together</span>
+                            <span class="content-block2 slider-text">Product Team Supports you on your Steps</span>
+                            <span class="content-block3 slider-text">Your success is our priority</span>
+                            <span class="content-block4 slider-text">
+                                <a href="#"><span class="getintouch-button button">Get in Touch</span></a>
+                                <span><img class="slider-image" src="<?=$block->getViewFileUrl('images/PlayCircle.png'); ?>" alt="slider-play-animate" /></span>
+                            </span>
+                    </div>
+                    <video class="background" autoplay muted loop>
+                        <source src="../pub/banner2.mp4" type="video/mp4">
+                    </video>
+                </div>  
+                <div class="video-wrapper">
+                    <div class="slider-content-block">
+                            <span class="content-block1 slider-text">Let's Grow Together</span>
+                            <span class="content-block2 slider-text">Product Team Supports you on your Steps</span>
+                            <span class="content-block3 slider-text">Your success is our priority</span>
+                            <span class="content-block4 slider-text">
+                                <a href="#"><span class="getintouch-button button">Get in Touch</span></a>
+                                <spn><img class="slider-image" src="<?=$block->getViewFileUrl('images/PlayCircle.png'); ?>" alt="slider-play-animate" /></span>
+                            </span>
+                    </div>
+                    <video class="background" autoplay muted loop>
+                        <source src="../pub/banner3.mp4" type="video/mp4">
+                    </video>
+                </div>                  
+        </div>
+    </div>
+            <div class="hak-services">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-hak-services')->toHtml();?>
+            </div>
+    
+            <div class="hak-promotions">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-hak-promotions')->toHtml();?>
+            </div>
+
+        <!-- Nanda changes in home page goes here ---->
+            <div class="sliderblock">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-product-slider')->toHtml();?>
+            </div>
+
+            <div class="printing-services">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-printing-services')->toHtml();?>
+            </div>
+            <div class="bestselling-menu">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-bestseller-menu')->toHtml();?>
+            </div>
+            <div class="brand">
+                <div class="brand-content"> 
+                    <div class="brand-item">
+                        <img src="<?=$block->getViewFileUrl('images/branding.png'); ?>" alt="brand-slide">
+                        <img src="<?=$block->getViewFileUrl('images/branding.png'); ?>" alt="brand-slide">
+                        <img src="<?=$block->getViewFileUrl('images/branding.png'); ?>" alt="brand-slide">
+                    </div>
+                </div>
+                <!-- <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-branding-image')->toHtml();?> -->
+            </div>
+
+            <div class="bottom-brand section">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-brand-printing')->toHtml();?>
+            </div>
+
+</div>
+<!-- Nanda changes in home page Ends here ---->

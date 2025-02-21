@@ -1,0 +1,517 @@
+/* Form container styles */
+.company-registration {
+    width: 200%;
+    display: flex;
+}
+
+.customer-company {
+    margin-right: 22px;
+    width: 25%;
+}
+
+.trn-details {
+    margin-right: 22px;
+    width: 25%;
+}
+
+.customer-details {
+    margin-bottom: 30px;
+}
+
+.taxation-details {
+    width: 25%;
+    margin-right: 22px;
+}
+
+.website-details {
+    width: 25%;
+}
+
+.customer-details-col1 {
+    margin-bottom: 30px;
+}
+
+.customer-details-col3 {
+    margin-bottom: 30px;
+}
+
+.customer-details-col4 {
+    margin-bottom: 30px;
+}
+
+.poc-details {
+    display: flex;
+    width: 200%;
+}
+
+.poc-details-row1 {
+    width: 48%;
+    margin-right: 20px;
+}
+
+.poc-details-row2 {
+    width: 48%;
+}
+
+.business_turnover {
+    width: 48%;
+    margin-top: 20px;
+}
+
+.team-details,
+.team-member {
+    display: flex;
+    width: 203%;
+    margin-bottom: 20px;
+}
+
+.team-details-row1 {
+    width: 25%;
+    margin-right: 20px;
+}
+
+.team-details-row2 {
+    width: 25%;
+    margin-right: 20px;
+    display: grid;
+}
+
+.create-customer {
+    display: flex;
+    margin-top: 30px;
+}
+
+.create-account-btn {
+    width: 25%;
+}
+
+.create-customer button,
+.add-team-btn button {
+    padding: 10px 20px;
+    background-color: #2E3891;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.create-account-btn,
+.add-team-btn {
+    width: 25%;
+}
+
+.create-customer button:hover,
+.add-team-btn button:hover {
+    background-color: #2E3891;
+}
+
+
+.customer_registration input[type="text"],
+.customer_registration input[type="number"],
+.customer_registration input[type="tel"],
+.customer_registration input[type="file"],
+.customer_registration select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.customer_registration input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.customer_registration label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.customer_registration {
+    margin-top: 35px;
+}
+
+.business-account h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.company-contact h3 {
+    font-weight: bold;
+    line-height: 0.4;
+}
+
+.poc-title h3 {
+    font-weight: 700;
+    line-height: 2.1;
+}
+
+.remove-team-member {
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1;
+    width: 25px;
+    height: 25px;
+    margin-top: 35px;
+    display: inline-block;
+}
+
+.remove-team-member:hover {
+    color: darkred;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the emoji */
+.emoji {
+    position: absolute;
+    left: 10px;
+    pointer-events: none;
+    height: 10px;
+}
+
+/* .success-message {
+    color: green;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.error-message {
+    color: red;
+    font-size: x-large;
+    font-weight: 700;
+} */
+
+/* The popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Close button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+}
+
+/* Success and error message colors */
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.otp-inputs input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resend-timer {
+    color: #888;
+}
+
+/* Customer Login Form CSS Starts From Here */
+
+/* body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+} */
+.login-container {
+    display: flex;
+    width: 120%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-left: 35%;
+}
+
+.login-container .left {
+    flex: 1;
+    display: flex;
+    /* background-image: url('your-image-url.jpg'); */
+    /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+
+}
+
+.login-container .right {
+    flex: 1;
+    background: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F6FA;
+}
+
+.right h2 {
+    margin-bottom: 20px;
+    color: #0D0D0D;
+    font-weight: 600;
+    line-height: 32.68px;
+}
+
+.right form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.input-icon input {
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #4F4F4F;
+    font-weight: 600;
+    line-height: 32.79px;
+}
+
+.form-group input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+}
+
+.form-group a {
+    color: #0066cc;
+    text-decoration: none;
+    float: right;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #2E3891;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background: #0055aa;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.social-login a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #555;
+}
+
+.social-login a:hover {
+    color: #000;
+}
+
+.register {
+    text-align: center;
+}
+
+.register a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}

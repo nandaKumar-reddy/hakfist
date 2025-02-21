@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <head>
+        <css src="Hakfist_CreateCustomer::css/b2bregistration.css" />
+        <script src="Hakfist_CreateCustomer::js/custom-script.js"/>
+    </head> 
+    <body>
+        <referenceContainer name="content">
+            <block class="Hakfist\CreateCustomer\Block\CategoryDropdown" name="custom.createcustomer.register" template="Hakfist_CreateCustomer::form/register.phtml" />
+        </referenceContainer>
+    </body>
+</page>

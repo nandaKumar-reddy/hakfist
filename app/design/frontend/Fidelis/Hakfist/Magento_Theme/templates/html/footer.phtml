@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<div class="footer-container">
+    <div class="footer-signup">
+        <div class="left-content">
+            <div class="email-image">
+            <img src="<?=$block->getViewFileUrl('images/footer_email.png'); ?>" alt="email Us" />
+            </div>
+            <div class ="email-content">
+            <h2>Are you looking for<br>something else?</h2>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="signup-content">
+            <p>"Sign up for exclusive product launches and the latest news. Contact us now to get started!"</p>
+            </div>
+            <div class="form-contact">
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="name" placeholder="Company Name">
+                <input type="number" name="number" placeholder="Mobile Number">
+                <input type="email" name="email" placeholder="Your email address">
+                <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Submit
+                    </button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+        <div class="container">
+        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage-footer-container')->toHtml();?>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <div class="footer-copyright">
+                    <p>Copyright 2024. Designed and developed by</p>
+                </div>
+                <div class="footer-fidelis">
+                    <p>Fidelis Technologies</p>
+                </div>
+            </div>
+            <div class="payment-logo">
+                <img src="<?=$block->getViewFileUrl('images/visa_logo.png'); ?>" alt="Payments " />
+                <img src="<?=$block->getViewFileUrl('images/mastercard_logo.png'); ?>" alt="Payments" />
+                <img src="<?=$block->getViewFileUrl('images/american_logo.png'); ?>" alt="Payments" />
+                <img src="<?=$block->getViewFileUrl('images/paypal_logo.png'); ?>" alt="Payments" />
+                <img src="<?=$block->getViewFileUrl('images/discover_logo.png'); ?>" alt="Payments" />
+            </div>
+        </div>
+    </div>
+</footer>

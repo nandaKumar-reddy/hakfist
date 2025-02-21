@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="GET" url="/V1/ProductSync">
+        <service class="Hakfist\ProductSync\Api\PostManagementInterface" method="customGetMethod"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+<!--POST API Start-->
+    <route method="POST" url="/V1/ProductSync/addproduct">
+        <service class="Hakfist\ProductSync\Api\PostManagementInterface" method="customPostMethod"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+        <data>
+            <parameter name="productarray" force="true">%productarray%</parameter>
+        </data>
+    </route>
+</routes>

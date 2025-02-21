@@ -1,0 +1,67 @@
+type Query {
+    getProductData(sku: String!): ProductData @resolver(class: "Hakfist\\ProductData\\Model\\Resolver\\ProductData") @doc(description:"get the product details")
+}
+
+type ProductData {
+    id: Int 
+    sku: String
+    name: String
+    price: Float
+    currency: String
+    description: String
+    quantity: Float
+    created_at: String
+    updated_at: String
+    status: Int
+    visibility: Int
+    color: String
+    tax_class_id: Int
+    capacity: String
+    size: String
+    filter_stock: Int
+    label: String
+    uom: String
+    digitalspace: String
+    material: String
+    printing_techniques: String
+    gift_message_available: Int
+    url_key: String
+    options_container: String
+    msrp_display_actual_price_type: Int
+    dimensions: String
+    dimensionswidth: String
+    dimensionsvolume: String
+    dimensionsdepth: String
+    grossweight: String
+    cartonheight: String
+    cartonwidth: String
+    cartonlength: String
+    cartonvolume: String
+    cartongrossweight: String
+    cartonquantity: String
+    individualpackagingafterprinti: String
+    image: String
+    small_image: String
+    thumbnail: String
+    swatch_image: String
+    customizable_options: [CustomizableOption]
+    child_products: [ProductData]
+}
+
+type CustomizableOption {
+    option_id: Int
+    type: String 
+    title: String
+    image: String
+    is_special_offer: String
+    values: [CustomizableOptionValue]
+}
+
+type CustomizableOptionValue {
+    value_id: Int
+    title: String
+    price: Float
+    price_type: String
+    sku: String
+    description: Int
+}

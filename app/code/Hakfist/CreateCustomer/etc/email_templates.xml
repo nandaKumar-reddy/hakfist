@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mail/etc/email_templates.xsd">
+    <template id="otp_email_template" label="OTP Email Template" file="otp_email_template.html" type="html" module="Hakfist_CreateCustomer" area="frontend"/>
+</config>
